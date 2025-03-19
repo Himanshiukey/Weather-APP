@@ -1,0 +1,469 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.FullDashboard {
+    height: 92vh;
+    width: 100vw;
+    /* background-color: rgba(186, 186, 239, 0.8); */
+}
+
+nav {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding-left: 20px;
+}
+
+.Dashboard {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    height: 72vh;
+    width: 80vw;
+}
+
+.DashboardHead {
+    text-shadow: 5px 5px 5px black;
+    height: 70px;
+    font-size: 2.5vw;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.halfDashboard {
+    height: 63.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+
+.halfLeftDashboard {
+    height: 100%;
+    width: 30%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 3%;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px black;
+    cursor: pointer;
+}
+
+.recentSearchesDiv {
+    height: 200px;
+    width: 100%;
+    position: relative;
+    text-shadow: none;
+}
+
+.recentSearches {
+    background-color: rgba(130, 130, 226, 0.192);
+    padding: 10px;
+    padding-top: 30px;
+    min-height: 50px;
+    width: 100%;
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.cross {
+    z-index: 110;
+    color: black;
+    position: absolute;
+    right: 7px;
+    font-size: 20px;
+    top: 2px;
+}
+
+.searchList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* -------------Alert------------------------------- */
+.custom-alert {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f44336;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+}
+
+.custom-alert button {
+    background-color: white;
+    color: #f44336;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.custom-alert button:hover {
+    background-color: #ddd;
+}
+
+.halfDashboard input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 18px;
+    border: 2px solid rgb(184, 184, 184);
+}
+
+.halfLeftDashboardbtnCenter {
+    padding-top: 20px;
+    height: 170px;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.halfLeftDashboardbtnCenter button {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    height: 40px;
+    width: 100%;
+    text-shadow: 1px 1px 2px black;
+    transition: all .5s ease-in-out;
+}
+
+.searchList p:hover {
+    color: red;
+}
+
+.searchBtn:hover {
+    background-color: rgb(9, 9, 181);
+}
+
+.locationBtn:hover {
+    background-color: rgb(31, 26, 9);
+    color: white;
+}
+.locationBtn{
+    background-color: #324652;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10000;
+
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.halfRightDashboard {
+    height: 100%;
+    width: 70%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 15px;
+    flex-direction: column;
+}
+
+.cityInfoDiv {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    height: 18vh;
+    width: 97%;
+    background-color: #324652;
+    padding: 7px 15px;
+    font-size: 18px;
+    color: white;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 1px 1px 2px black;
+}
+
+#iconDesc {
+    font-size: 20px;
+    text-transform: capitalize;
+    /* background-color: black; */
+    text-align: center;
+}
+
+.cityInfoDiv h1 {
+    font-size: 28px;
+}
+
+.fiveDiv {
+    height: 35vh;
+    width: 100%;
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.fiveDivsDiv:hover {
+    background-color: rgb(47, 71, 95);
+    color: white;
+}
+
+.Day5 {
+    font-size: 25px;
+    font-weight: 580;
+}
+
+.fiveDivsDiv {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    height: 220px;
+    border-radius: 5px;
+    background-color: rgb(119, 161, 185);
+    width: 160px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: column;
+    text-shadow: 1px 1px 2px black;
+}
+
+.weatherIconClass p {
+    text-transform: capitalize;
+    color: rgb(0, 255, 34);
+}
+
+.fiveDivsDiv i {
+    color: #FAB03C;
+}
+
+.fiveDivsDiv h3:nth-of-type(1) i {
+    color: red;
+}
+
+.fiveDivsDiv h3:nth-of-type(3) i {
+    color: rgb(0, 0, 187);
+}
+
+.fiveDivsDiv h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* -------------------For mobile phones--------------------- */
+@media (max-width:650px) {
+
+    nav {
+        padding: 0;
+    }
+
+    .navinnerDiv h3 {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .FullDashboard {
+        height: 160vh;
+    }
+
+    .Dashboard {
+        height: 150vh;
+        width: 95vw;
+    }
+
+    .DashboardHead {
+        height: 48px;
+        font-size: 8vw;
+
+    }
+
+    .halfDashboard {
+        height: 145vh;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+
+    .loader {
+        left: 40%;
+    }
+
+
+    .halfLeftDashboard {
+        height: 16%;
+        width: 95%;
+        /* background-color: yellow; */
+    }
+
+    .recentSearches {
+        background-color: #BEDAFD;
+        z-index: 100;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+    .halfRightDashboard {
+        height: 84%;
+        width: 97%;
+        /* background-color: red; */
+    }
+
+    .cityInfoDiv {
+        font-size: 15px;
+    }
+
+    .cityInfoDiv h1 {
+        font-size: 16px;
+    }
+
+    .cityInfoDiv img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .fiveDiv {
+        height: 60%;
+        width: 100%;
+        /* background-color: bisque; */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Create two equal columns */
+        gap: 10px;
+        color: white;
+    }
+
+    .Day5 {
+        font-size: 25px;
+        font-weight: 580;
+        text-shadow: 2px 2px 4px white;
+    }
+
+    .fiveDivsDiv {
+        height: 200px;
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+
+
+    .navinnerDiv h3 {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .FullDashboard {
+        height: 160vh;
+    }
+
+    .Dashboard {
+        height: 150vh;
+        width: 95vw;
+    }
+
+    .DashboardHead {
+        height: 48px;
+        font-size: 3vw;
+    }
+
+    .halfDashboard {
+        height: 145vh;
+        flex-direction: column;
+        /* background-color: aqua; */
+    }
+
+    .halfLeftDashboard {
+        height: 16%;
+        width: 95%;
+        /* background-color: yellow; */
+    }
+
+    .loader {
+        left: 40%;
+    }
+
+    .recentSearches {
+        background-color: #BEDAFD;
+        z-index: 100;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+    .halfRightDashboard {
+        height: 84%;
+        width: 95%;
+        /* background-color: red; */
+    }
+
+    .cityInfoDiv {
+        margin-bottom: 50px;
+
+        font-size: 15px;
+    }
+
+    .cityInfoDiv h1 {
+        font-size: 16px;
+    }
+
+    .cityInfoDiv img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .fiveDiv {
+        height: 50%;
+        width: 100%;
+        /* background-color: bisque; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Create two equal columns */
+        gap: 10px;
+        color: white;
+    }
+
+    .Day5 {
+        font-size: 25px;
+        font-weight: 580;
+        text-shadow: 2px 2px 4px white;
+    }
+
+    .fiveDivsDiv {
+        height: 200px;
+    }
+
+}
